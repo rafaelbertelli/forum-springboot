@@ -9,7 +9,6 @@ import br.com.rafael.forum.repository.CursoRepository;
 
 public class TopicoForm {
 
-  // #region attrs
   @NotNull
   @NotEmpty
   @Length(min = 5)
@@ -22,11 +21,8 @@ public class TopicoForm {
 
   @NotNull
   @NotEmpty
-  @Length(min = 5)
   private String nomeCurso;
-  // #endregion
 
-  // #region getters/setters
   public String getTitulo() {
     return titulo;
   }
@@ -50,10 +46,10 @@ public class TopicoForm {
   public void setNomeCurso(String nomeCurso) {
     this.nomeCurso = nomeCurso;
   }
-  // #endregion
 
   public Topico converter(CursoRepository cursoRepository) {
     Curso curso = cursoRepository.findByNome(nomeCurso);
     return new Topico(titulo, mensagem, curso);
   }
+
 }

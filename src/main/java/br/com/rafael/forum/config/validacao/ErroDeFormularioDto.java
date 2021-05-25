@@ -1,6 +1,7 @@
 package br.com.rafael.forum.config.validacao;
 
 public class ErroDeFormularioDto {
+
   private String campo;
   private String erro;
 

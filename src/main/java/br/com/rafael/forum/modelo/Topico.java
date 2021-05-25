@@ -9,8 +9,8 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Topico {
@@ -27,7 +27,7 @@ public class Topico {
 	private Usuario autor;
 	@ManyToOne
 	private Curso curso;
-	@ManyToMany(mappedBy = "topico")
+	@OneToMany(mappedBy = "topico")
 	private List<Resposta> respostas = new ArrayList<>();
 
 	public Topico() {}
